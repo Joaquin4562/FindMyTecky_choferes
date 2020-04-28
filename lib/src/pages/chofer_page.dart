@@ -183,7 +183,7 @@ class _InterChocPageState extends State<InterChocPage> {
 
   void updateData (LocationData datos) { 
     try { 
-      databaseReference.collection('Transportes').document('$dropdownValue').updateData({ 'latidud' : '${datos.latitude}','longitud' : '${datos.longitude}'}); 
+      databaseReference.collection('Transportes').document('$dropdownValue').updateData({ 'latitud' : '${datos.latitude}','longitud' : '${datos.longitude}'}); 
     } 
     catch(e) 
     { 
