@@ -38,7 +38,7 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "com.example.find_my_tecky_choferes"
+        applicationId "com.example.fmt_choferes"
         minSdkVersion 16
         targetSdkVersion 28
         multiDexEnabled true
