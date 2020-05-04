@@ -3,6 +3,7 @@ import 'package:location/location.dart';
 import 'dart:async';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:wakelock/wakelock.dart';
 
 class InterChocPage extends StatefulWidget {
   @override
@@ -148,11 +149,12 @@ class _InterChocPageState extends State<InterChocPage> {
     return(){
       if(dropdownValue != 'Escoja una ruta')
       {
+        Wakelock.enable();
         setState(() {
         disabledEncender = true;
         disabledApagar = false;         
         });   
-        print('Hola desde encender'); 
+        // print('Hola desde encender'); 
         _ubicaciones();         
       }
       else
@@ -172,13 +174,14 @@ class _InterChocPageState extends State<InterChocPage> {
   Function _disponibilidadApagar() 
   {
     return(){
-        setState(() {
-          disabledEncender = false;
-          disabledApagar = true;         
-        });   
-        print('Hola desde apagar'); 
-        locationSubscription.pause();         
-      };
+      Wakelock.disable();
+      setState(() {
+        disabledEncender = false;
+        disabledApagar = true;         
+      });   
+      // print('Hola desde apagar'); 
+      locationSubscription.pause();         
+    };
   }
 
   void updateData (LocationData datos) { 

@@ -16,6 +16,8 @@ dependencies:
   http:
   fluttertoast: ^4.0.0
   cloud_firestore:
+  wakelock: ^0.1.4+1
+  
 
 dev_dependencies:
   flutter_test:
